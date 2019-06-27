@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title >Quick Dial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <div class="col-md-6" *ngFor="let i of contacts">
+      <h4 class="modal-title w-100" id="myModalLabel">{{i.name}}</h4>
+      <a href="tel:{{i?.number}}"><ion-icon name="call"></ion-icon></a>
+      <br>
+
+        <ion-icon name="call "></ion-icon>
+      <div class="modal-body" *ngIf="(i.number).substring(0,4) == '0800' || (i?.number).length <= 5">
+
+        The number {{i.call}} is a tollfree
+      </div>
+      <div class="modal-body" *ngIf="(i?.number).substring(0,4) != '0800' && (i?.number).length > 5">
+        Please note that for this number: {{i.number}} call rates will charged
+      </div>
+    </div>
+  </div>
+</ion-content>

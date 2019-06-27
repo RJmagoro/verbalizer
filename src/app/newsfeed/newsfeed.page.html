@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>News feed</ion-title>
+    <ion-icon routerLink="/userchat" class="top-icon" name="{{iconname}}"></ion-icon><small>{{num0fmessages}}</small>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   
+        
+      
+  <div class="ion-padding">
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+          </ion-refresher-content>
+        </ion-refresher>
+    <ion-card *ngFor="let p of post">
+
+      <ion-card-header>
+        <div *ngFor="let i of institution">
+          <div *ngIf="i.id == p.orgid">
+            <ion-avatar>
+              <ion-img src={{i.image}}></ion-img>
+            </ion-avatar>
+
+            <ion-card-title>{{i.name}}</ion-card-title>
+            <h5>{{p.time}} | {{p.date.toDate() | date:'mediumDate'}}</h5>
+            <br>
+
+          </div>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-card-subtitle>{{p.heading}}</ion-card-subtitle>
+        <img src={{p.image}}>
+       
+        {{p.topic}}
+        
+      </ion-card-content>
+
+      <div class="icon-view">
+        <ion-icon  (click)="onLike(p, p.postId)" (dblclick)="dislike(p, p.postId)" name="thumbs-up"></ion-icon>
+        <span style="padding-right:13px;">{{p.reaction}}</span>
+        <ion-icon style="padding-left:13px;"(click)="onComment(p)" name="chatboxes"></ion-icon>
+        <span>{{p.noComment}}</span>
+      </div>
+
+      <form [formGroup]="commentForm">
+          <ion-avatar class="userpic">
+              <ion-img src="{{myUser.profilepic}}"> </ion-img>
+            </ion-avatar>
+          <ion-button  class="commentbtn"(click)="commentAdd(p)">
+              <ion-icon   name="send"></ion-icon>
+            </ion-button>
+        <ion-input style="width:55%"  formControlName="comment" placeholder="add your comment">
+        </ion-input>
+        
+
+      </form>
+      <div *ngIf="clickedCard == p">
+        <ion-card>
+          <ion-card-content>
+            <div *ngFor="let c of p.comments">
+              <br>
+              <div class="card-deck" *ngIf="c != ''">
+                <!--*ngFor="let c of postcomments"-->
+                <div class="media-body">
+                  <div *ngFor="let u of user">
+                      
+                    <h6 class="mt-0 font-weight-bold" *ngIf="c.uid == u.id" style="color:teal">
+                      <ion-avatar class="userpic">
+                        <ion-img src="{{u.profilepic}}"> </ion-img>
+                      </ion-avatar>
+                      {{u.name}} {{u.surname}}
+                      <ion-icon name="redo"></ion-icon>
+                      <br>
+                      <small style="color:dimgreygit"><i>{{c.date.toDate() | date:'medium'}}</i></small>
+                    </h6>
+                  </div>
+                  <!--<h6 class="mt-1 font-weight-italics">{{c.date.toDate() | date: 'medium'}}</h6>-->
+                  <div class="comments-show">
+                    {{c.comment}}
+                  </div>                  
+              
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </ion-card>
+  </div>
+</ion-content>

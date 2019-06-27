@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>{{inst.name}}</ion-title>
+    <ion-icon class="ico" (click)="onBack()" name="arrow-back"></ion-icon>
+    <!-- <ion-avatar class="orgPic">
+        <ion-img src="{{inst.image}}"></ion-img>
+      </ion-avatar> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <div class="col-md-6 col-xl-9 pl-md-3 px-lg-auto px-0">
+      <div class="chat-message">
+        <div *ngIf="receiver">
+          <div *ngFor="let i of institution">
+            <div *ngIf="i.id == receiver">
+              <p class="h5">Chating with {{i.name}}</p>
+            </div>
+          </div>
+        </div>
+     
+        <ul class="list-unstyled chat-1 scrollbar-light-blue pt-1">
+          <div class="mr-3" *ngFor="let ma of messageArray">
+
+            <div id="chatBox">
+
+              <div *ngIf="today.toString().substr(0,15) == ma.time.toDate().toString().substr(0,15) ">
+                <h5>Today</h5>
+                <hr>
+                <div *ngIf="inst">
+                  <div *ngIf="inst.id == ma.sender" style="color:teal" class="float-right">
+                    <ion-card class="received" style="margin:5px;background-color: aqua">
+                      <ion-card-content>
+
+                        <ion-card-title >
+                          <h4>{{inst.name}}</h4>
+                          <hr>
+                        </ion-card-title>
+                        <ion-card-subtitle style="font-size: 15px">{{ma.message}}</ion-card-subtitle>
+                        <div class="flex-row">
+                          <a class="card-link">{{ma.time.toDate() | date: "h:mm a"}}</a>
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+
+                  </div>
+                  <div *ngIf="inst.id == ma.receiver"  class="ml-1 float-left">
+
+                    <ion-card  class="sentMs" >
+                      <ion-card-content>
+                        <ion-card-title>
+                          <h6>You:</h6>
+                          <hr>
+                        </ion-card-title>
+                        <ion-card-subtitle style="font-size: 15px">{{ma.message}}</ion-card-subtitle>
+                        <div class="flex-row">
+                          <a class="card-link">{{ma.time.toDate() | date: "h:mm a"}}</a>
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div *ngIf="today.toString().substr(0,15) != ma.time.toDate().toString().substr(0,15) ">
+                <h6>{{ma.time.toDate().toString().substr(0,15)}}</h6>
+                <br>
+                <hr>
+                <div *ngIf="inst">
+                  <div *ngIf="inst.id == ma.sender" >
+                    <ion-card class="received" >
+                      <ion-card-content>
+
+                        <ion-card-title>
+                          <h4>{{inst.name}}</h4>
+                          <hr>
+                        </ion-card-title>
+                        <ion-card-subtitle style="font-size: 15px">{{ma.message}}</ion-card-subtitle>
+                        <div class="flex-row">
+                          <a class="card-link">{{ma.time.toDate() | date: "h:mm a"}}</a>
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+
+                  </div>
+                  <br>
+                  <div *ngIf="inst.id == ma.receiver"  class="ml-1 float-left">
+
+                    <ion-card class="sentMs" >
+                      <ion-card-content>
+                        <ion-card-title>
+                          <h6>You:</h6>
+                          <hr>
+                        </ion-card-title>
+                        <ion-card-subtitle style="font-size: 15px">{{ma.message}}</ion-card-subtitle>
+                        <div class="flex-row">
+                          <a class="card-link">{{ma.time.toDate() | date: "h:mm a"}}</a>
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <br>
+            <div *ngIf="inst">
+              <div id="chatBox" class="ml-1 float-left" *ngIf="ma.receiver == inst.id && ma.sender == receiver">
+                <div *ngFor="let u of users" >
+                  <span *ngIf="u.id == receiver">
+                    <!--panel-->
+                    <ion-card class="received" class="mb-3">
+                      <ion-card-header>
+                        <h4>{{u.name}}:
+                          <span style="font-size: 12px">
+                            {{ma.time.toDate() | date: "h:mm a"}}
+                          </span>
+                        </h4>
+                      </ion-card-header>
+                      <ion-card-content>
+                        <ion-card-subtitle>{{ma.message}}.</ion-card-subtitle>
+                      </ion-card-content>
+                    </ion-card>
+                    <!--panel-->
+                  </span>
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
+
+        </ul>
+       
+        <form class="formG" [formGroup]="messages">
+
+
+          <ion-textarea class="form-control pl-2 my-0" id="exampleFormControltextarea2" rows="2"
+            placeholder="Type your message here..." formControlName="message"></ion-textarea>
+
+
+          
+        </form>
+        <ion-button class="sendBTN" *ngIf="receiver" (click)="submitMessage()">
+            <ion-icon name="send"></ion-icon>
+          </ion-button>
+      </div>
+    </div>
+    <div class="space" id="content">
+      <br>
+      <br>
+    </div>
+  </div>
+
+</ion-content>

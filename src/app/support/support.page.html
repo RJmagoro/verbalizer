@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Support</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="ion-padding">
+  <h4>Get in touch with us.</h4>
+  <p><u>We would like to hear from you</u></p>
+    <form class="text-center border border-light p-5" [formGroup]="contactForm" (submit)="onSubmit()" >
+
+        <p class="h4 mb-4">Contact us</p>
+      
+        <!-- Name -->
+        <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name" id="defaultContactFormName" mdbion-Input
+          class="form-control mb-4" placeholder="Your name"></ion-input>
+        </ion-item>
+          <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)" >
+            <div *ngIf="contactForm.controls['name'].errors.required">
+           <small class="errr">We need your name to get back to you.</small> 
+          </div>
+        </div>
+      
+        <!-- Email -->
+        <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" formControlName="email" id="defaultContactFormEmail" mdbion-Input
+          class="form-control mb-4" placeholder="Your e-mail"></ion-input>
+        </ion-item>
+          <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].required ||contactForm.controls['email'].dirty">
+            <div *ngIf="contactForm.controls['email'].errors.required">
+            <small>email is required.</small> 
+          </div>
+        </div>
+      
+        <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].errors.email" >
+          <span class="errr">please provide a valid email </span>
+        </div>
+      
+        <br>
+        <ion-item>
+            <ion-label>Subject</ion-label>
+            <ion-select placeholder="Select your reason of contact" class="browser-default custom-select mb-4" formControlName="ethnic">
+              <ion-select-option value="Feedback">App feedback</ion-select-option>
+              <ion-select-option value="Bug">Report a bug</ion-select-option>
+              <ion-select-option value="Feature request">New feature request</ion-select-option>
+              <ion-select-option value="Other matters">Not listed</ion-select-option>
+            </ion-select>
+          </ion-item>
+        <!-- Message -->
+        <ion-fab class="fabBTN" vertical="bottom" horizontal="start" slot="fixed">
+            <ion-fab-button color="clear">
+              <ion-icon name="walk"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+        <ion-item>
+        <ion-label >Message</ion-label>
+        <div class="form-group">
+          <ion-textarea formControlName="message" class="form-control rounded-0" mdbion-Input id="exampleFormControlTextarea2"
+            rows="4" placeholder="Your message"></ion-textarea>
+        </div>
+      </ion-item>
+        
+        <!-- Send ion-button -->
+        <ion-button color="primary" block="true" class="z-depth-0 my-4 waves-effect"
+          mdbWavesEffect type="submit" (click)="basicModal.show()" >Contact</ion-button>
+      
+      </form>
+</div>
+</ion-content>

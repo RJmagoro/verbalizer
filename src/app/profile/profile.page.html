@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title >Profile</ion-title>
+    <ion-icon (click)="UpdateProfile()" class="top-icon" name="checkmark"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form [formGroup]="profileForm"  class="text-center border border-light p-5" >
+
+
+        <h3 class="h4 mb-4">Update your profile</h3>
+        <ion-text>{{myUser.name}}</ion-text>
+       
+        <div class="pic">
+        <ion-img src={{myUser.profilepic}}></ion-img>
+        <ion-fab  (click)="UpdateProfile()" vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button>
+              <ion-icon name="camera"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+        <!-- <ion-fab (click)="takepicture()" vertical="center" horizontal="start" slot="fixed">
+            <ion-fab-button>
+              <ion-icon name="reverse-camera"></ion-icon>
+            </ion-fab-button>
+        </ion-fab> -->
+        <hr>
+
+      </div>
+        <ion-input type="file" capture="camera" accept="image/*" (change)="onFileSelected($event)" ><ion-icon name="camera"></ion-icon></ion-input>
+        <!-- Stores the file in firebase -->
+
+        <div class="form-row mb-4">
+          <div class="col">
+              <ion-item>
+            <ion-label><b>Name</b></ion-label>
+            <ion-input type="text" formControlName="name"  id="defaultRegisterFormFirstName" class="form-control" placeholder="{{myUser.name}}" value="{{myUser.name}}" ></ion-input>
+              </ion-item>
+          </div>
+          <div class="col">
+              <ion-item>
+            <ion-label><b>Surname</b></ion-label>
+            <ion-input type="text" formControlName="surname" id="defaultRegisterFormLastName" class="form-control" placeholder="{{myUser.surname}}" value="{{myUser.surname}}" ></ion-input>
+              </ion-item>
+          </div>
+        </div>
+        
+        <br>
+        <!-- Newsletter -->
+      
+        <!-- Sign up ion-button -->
+        <!-- <ion-button color="primary" (click)="UpdateProfile()">Update</ion-button> -->
+      
+       
+        <hr>
+  
+        <!-- Terms of service -->
+        <p class="footer">By clicking
+          <em><ion-icon name="checkmark"></ion-icon> / <ion-icon name="camera"></ion-icon> </em> you agree to our
+          <a routerLink='/terms'>terms and conditions</a> 
+          </p>
+  
+      </form>
+    </div>
+</ion-content>

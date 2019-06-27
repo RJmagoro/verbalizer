@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="Verify" *ngIf="first">
+     
+    <ion-input type="text" placeholder="phone number" [(ngModel)]="phone"></ion-input>
+      <ion-button ion-button block (click)="send()">send</ion-button><br>
+    <ion-input type="text" placeholder="Verification code" [(ngModel)]="code"></ion-input>
+    <ion-button ion-button block (click)="onverify()">Verify</ion-button>
+
+  </div>
+  <div *ngIf="second">
+
+  
+  <div class="ion-padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2">
+        <h5 *ngIf="!receiver">Select a institution to start a chat!</h5>
+
+          <div *ngFor="let i of institution">
+            <ion-card *ngIf="i.id != userid">
+              <a class="d-flex justify-content-between" (click)="showMessage(i)">
+                <ion-card-header>
+                  <ion-avatar>
+                    <ion-img src="{{i.image}}" alt="avatar"></ion-img>
+                  </ion-avatar>
+
+                  <ion-card-title><strong>{{i.name}}</strong></ion-card-title>
+                  
+                </ion-card-header>
+              </a>
+              
+              <ion-card-content>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="col-md-6 col-xl-9 pl-md-3 px-lg-auto px-0">
+      <div class="chat-message">
+    
+      </div>
+    </div>
+  </div>
+  <div class="chartbox" >
+    <form class="formG" [formGroup]="message">
+
+    
+
+  
+    <ion-label>Charting with campaign Creators</ion-label><br>
+    <ion-textarea type="textarea" formControlName="message" placeholder="Type your message here" >{{ma.message}}</ion-textarea>
+    <br><br>
+    <ion-button   (click)="submitMsg()">send</ion-button>
+  </form>
+  </div>
+</div>
+
+  
+  
+</ion-content>

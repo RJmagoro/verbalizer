@@ -1,0 +1,45 @@
+<ion-app style="background-color:teal">
+  <div *ngIf="showSplash" class="gears">
+    <div class="spinner">
+      <img src="https://goo.gl/fpC7Oh" alt="gear" class="big">
+
+      <img src="https://goo.gl/qL1pnV" alt="gear" class="small">
+      <h1>Please wait...</h1>
+    </div>
+  </div>
+  <ion-split-pane>
+    <ion-menu  *ngIf="user">
+      
+      <ion-header>
+         
+        <ion-toolbar>
+          
+            <!-- <a class="logo-wrapper waves-effect">
+              <h1>verba<span>Lize</span></h1>
+            </a> -->
+            <div class="menu-j">
+            <ion-avatar>
+            <ion-img src="{{myUser?.profilepic}}"></ion-img>
+          </ion-avatar>
+          
+          <h1>{{myUser.name}} <span>{{myUser.surname}}</span></h1>
+        </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content >
+        <ion-list >
+          <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages">
+            <ion-item  [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon style="color:teal; font-size: 30px" size="3x" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label style="color:teal; font-size: 20px">
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    
+    </ion-menu>
+    <ion-router-outlet color="danger" main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

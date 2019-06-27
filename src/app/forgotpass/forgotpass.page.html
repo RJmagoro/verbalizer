@@ -1,0 +1,24 @@
+
+
+<ion-content>
+  <br>
+<div class="ion-padding">
+  <ion-img src="assets/images/iconv.png"></ion-img>
+  <br>
+  <ion-text>To reset password, enter your email and press 'reset' button and check your email to follow instructions.</ion-text>
+  <hr>
+
+<form [formGroup]='forgotpass' (submit)="sendMail()">
+  <ion-label>Your email</ion-label>
+  <ion-item style="color:teal">
+  <ion-input formControlName="email" type="email" placeholder="Your email"></ion-input>
+</ion-item>
+  <ion-button type="submit" shape="round">Reset password</ion-button>
+  <hr>
+  <br>
+  <p routerLink="/signin">BACK</p>
+  <hr>
+
+</form>
+</div>
+</ion-content>

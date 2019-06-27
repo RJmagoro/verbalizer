@@ -1,0 +1,50 @@
+.formG{
+    position: fixed;
+    bottom: 0;
+    background-color: whitesmoke;
+    width: 88%;
+    height: 80px;
+   
+    
+}
+.sendBTN{
+    bottom:8px;
+    position: sticky;
+    float: right;
+
+}
+// .orgPic{
+//     position: sticky;
+//      width: 40px;
+//      height: 40px;
+//     margin-left: 20px;
+ .space{
+     height: 10px;
+ }   
+    
+
+// }
+.ico{
+    font-size: 25px;
+    margin-left: 7px;
+    float: inline-start;
+}
+.ion-padding{
+    background-color: white;
+    .sentMs{
+        width: 79%;
+        left: 0;
+        background-color:#0ba191;
+        ion-card-subtitle{
+            color: black;
+        }
+    }
+    .received{
+        width: 79%;
+        right: 0;
+        background-color: white;
+        ion-card-subtitle{
+            color: black;
+        }
+    }
+}

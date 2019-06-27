@@ -1,0 +1,21 @@
+.ion-padding{
+    text-align: center;
+    align-items: center;
+    
+    ion-img{
+        top:0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    ion-label{
+        font-size:25px;
+    }
+    ion-item{
+        width: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

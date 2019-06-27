@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "691694774113",
+    "firebase_url": "https://smsverify-15254.firebaseio.com",
+    "project_id": "smsverify-15254",
+    "storage_bucket": "smsverify-15254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691694774113:android:958f685d0c456d49",
+        "android_client_info": {
+          "package_name": "sms.verify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691694774113-0upnomgn2h7jl3cf1jgsjdnjgcpekiqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDyIIzVKLbCrQS39AG0vGLETxx2rG1_eI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691694774113-0upnomgn2h7jl3cf1jgsjdnjgcpekiqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

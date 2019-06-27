@@ -1,0 +1,7 @@
+{
+  "name": "vrblApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

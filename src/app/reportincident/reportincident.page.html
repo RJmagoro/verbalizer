@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title >Report Incident</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+        
+    <!-- Default form contact -->
+    <form  [formGroup]="Reportform" class="text-center border border-light p-5" >
+    
+        <ion-input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" (change)="onFileSelected($event)"></ion-input>
+        <!-- Stores the file in firebase -->
+         <ion-button shape="square" color="primary" type="ion-button" (click)="onUpload()">Upload File</ion-button>
+        
+         <br>
+
+         <ion-label><b>Description of Incident</b></ion-label>
+              <ion-item>
+              </ion-item>
+      
+              
+              <!-- <ion-item>
+            
+            <ion-input type="text" formControlName="typeOfAbuse"  placeholder="Your type of abuse" ></ion-input>
+              </ion-item> -->
+              <ion-item>
+                  <ion-label>Type of Abuse</ion-label>
+                  <ion-select  formControlName="typeOfAbuse" placeholder="Select the type of abuse">
+                      <ion-select-option value="Physical Abuse">Physical Abuse</ion-select-option>
+                      <ion-select-option value="Emotional Abuse">Emotional Abuse</ion-select-option>
+                      <ion-select-option value="Sexual Abuse">Sexual Abuse</ion-select-option>
+                      <ion-select-option value="Child Abuse">Child Abuse</ion-select-option>
+                      <ion-select-option value="Digital Abuse">Digital Abuse</ion-select-option>
+                      <ion-select-option value="Domestic Violence">Domestic Violence</ion-select-option>
+                      <ion-select-option value="Financial Abuse">Financial Abuse</ion-select-option>
+                  </ion-select>
+                </ion-item>
+      
+      
+        
+        <br>
+        
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-datetime placeholder=" Click to pick a date of the incident" formControlName="date"display-format="MMM DD, YYYY"></ion-datetime>
+          </ion-item>
+          
+        <ion-item>
+            <ion-label><b>Location</b></ion-label>
+          <ion-input type="text" formControlName="location" placeholder="Your location" ></ion-input>
+        </ion-item>  
+        
+        <ion-button color="primary" (click)="reportIncident()"  type="submit">REPORT</ion-button>
+       
+        <hr>
+     
+      
+      </form>
+      
+    </div>
+  
+</ion-content>

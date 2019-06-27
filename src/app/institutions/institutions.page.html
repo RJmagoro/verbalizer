@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>{{InstitutionsNum}} Institutions </ion-title>
+    
+    <ion-icon style="float: right;font-size:24px;" name="business"></ion-icon>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="ion-padding" *ngFor="let i of institutions">
+  <ion-card class="welcome-card">
+    <ion-avatar float-left>
+      <ion-img src="{{i.image}}"></ion-img>
+    </ion-avatar>
+      <ion-card-header float-right>
+        
+          <ion-card-subtitle>{{i.name}}</ion-card-subtitle>
+         
+        </ion-card-header>
+       <br>
+        <ion-card-content>
+      <br>
+      <div class="icon-list">
+      <a href="{{i.website}}"><ion-icon title="{{i.website}}" name="globe"></ion-icon></a>
+      <a href="tel:{{i.call}}"><ion-icon title="{{i.call}}" name="call"></ion-icon></a>
+      <a href="mailto:{{i.email}}"><ion-icon title="{{i.email}}" name="mail"></ion-icon></a>
+     </div>
+    </ion-card-content>
+  </ion-card>
+  
+</div>
+</ion-content>

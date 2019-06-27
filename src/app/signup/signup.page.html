@@ -1,0 +1,70 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title >Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content>
+  <div class="ion-padding">
+      <!-- <ion-img style="text-align:center" src="assets/images/icon.png" class="center"></ion-img> -->
+      <br>
+    <form color="Secondary" [formGroup]="userProfile" (submit)="signUp()">
+     <br>
+      <ion-item color="Secondary">
+        <ion-label>E-mail *</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Your email"></ion-input>
+      </ion-item >
+      <ion-item color="Secondary">
+        <ion-label>Name *</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Your name"></ion-input>
+      </ion-item>
+      <ion-item color="Secondary">
+        <ion-label>Surname *</ion-label>
+        <ion-input formControlName="surname" type="text" placeholder="Your surname"></ion-input>
+      </ion-item>
+        
+        <ion-item color="Secondary">
+            <ion-label>Date of birth *</ion-label>
+          <ion-datetime placeholder="Select your date of birth" formControlName="birthDate" display-format="MMMM DD,YYYY"></ion-datetime>
+        </ion-item>
+        
+        <!-- <ion-input type='text' formControlName="ethnic" placeholder="your ethinc group"></ion-input>
+     --><ion-item color="Secondary">
+        <ion-label>Ethnic group </ion-label>
+        <ion-select placeholder="Select ethnic Group" class="browser-default custom-select mb-4" formControlName="ethnic">
+          <ion-select-option default value="Not specified">Not specified</ion-select-option>
+          <ion-select-option value="African">African</ion-select-option>
+          <ion-select-option value="White">White</ion-select-option>
+          <ion-select-option value="Indian">Indian</ion-select-option>
+          <ion-select-option value="Coloured">Coloured</ion-select-option>
+        </ion-select>
+      </ion-item>
+        
+        <ion-item color="Secondary">
+            <ion-label>Gender *</ion-label>
+          <ion-select placeholder="Select gender">
+            <ion-select-option value="Female">Female</ion-select-option>
+            <ion-select-option value="Male">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="Secondary">
+        <ion-label>Phone</ion-label>
+        <ion-input formControlName="phone" type="tel" placeholder="Your number"></ion-input>
+      </ion-item>
+        <ion-item color="Secondary">
+        <ion-label>Password *</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Your password"></ion-input>
+      </ion-item>
+      <br>
+
+        
+        <ion-button  size="large" [disabled]="invalid" color="primary" type="submit">Sign Up</ion-button>
+        <p>If you already have an account: <b style="color:teal" routerLink="/signin">SIGN IN</b> here</p>
+     
+      
+     
+        <br>
+        
+    </form>
+  </div>
+</ion-content>
