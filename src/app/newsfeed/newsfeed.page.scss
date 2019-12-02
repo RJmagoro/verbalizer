@@ -12,19 +12,33 @@ ion-title{
 ion-avatar{
     float: left;
     font-size: 10px;
+    overflow: hidden;
 }
 .comments-sec{
     float: right;
 }
 .icon-view{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     padding-right: 15px;
     color:teal;
     
+    
 }
+
 img{
-    border: 3px;
+    border: 1px;
+    // max-height: 30vh;
+    // object-fit: contain;
+    // padding: 10px;
+    
+    
+}
+ion-img{
+    // max-height: 30vh;
+    // object-fit: contain;
+    // padding: 10px;
+    overflow: hidden;
 }
 .comments-show{
 
@@ -33,7 +47,10 @@ img{
 }
 ion-card-content{
     color:black;
-    font-size:18px;
+    font-size:16px;
+    // float: right;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .commentbtn{
@@ -52,3 +69,22 @@ ion-card-content{
     margin-right: 5px;
     margin-inline-start: 8px;
 }
+ion-card-title{
+//   margin-left:  30%;
+margin-left: auto;
+margin-right: auto;
+
+}
+h6{
+    margin-left:  30%;
+    font-size: 100%;
+
+}
+ion-img{
+    overflow: hidden;
+}
+ion-menu-button{
+    color: white;
+  }
+
+

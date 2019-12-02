@@ -4,47 +4,65 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content>
+<ion-content >
   <div class="ion-padding">
-      <ion-img src="assets/images/iconv.png"></ion-img>
-    <form [formGroup]="signin" (submit)="SignIN()">
+      <ion-img src="assets/images/icon.png"></ion-img>
       
-      <br>
+    <form [formGroup]="signin" (submit)="SignIN()" >
       
-      <ion-item>
-          <ion-label>E-mail</ion-label>
-        <ion-input formControlName="email" type="email" placeholder="Your email"></ion-input>
-      </ion-item>
+     <br><br>
+     <!-- <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title></ion-card-title>
+        </ion-card-header>
       
-      <ion-item>
-          <ion-label>Password</ion-label>
-        <ion-input formControlName="password" type="password" placeholder="Your password"></ion-input>
-      </ion-item>
-      <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)"
-    class="alert alert-danger">
+        <ion-card-content>
+            <ion-item  >
+                <ion-label style="color:white" position="floating">E-mail<ion-icon float-right name = "mail"></ion-icon></ion-label>
+               <ion-input formControlName="email" type="email"></ion-input>
+               </ion-item>
+               <br>
+               <ion-item >
+    
+               <ion-label style="color:white" position="floating">Password<ion-icon float-right name = "lock"></ion-icon></ion-label>
+               <ion-input  formControlName="password" type="password"></ion-input>
+              </ion-item>  
+         
+        </ion-card-content>
+      </ion-card> -->
+            <ion-item style="color:darkcyan" >
+              <ion-label  position="floating">E-mail<ion-icon float-right name = "mail"></ion-icon></ion-label>
+             <ion-input formControlName="email" type="email"></ion-input>
+             </ion-item>
+             <br>
+             <ion-item style="color:darkcyan" >
 
-  <div *ngIf="password.errors.required">
-    password is required.
-  </div>
- 
-</div> -->
-      <br>
+             <ion-label  position="floating">Password<ion-icon float-right name = "lock"></ion-icon></ion-label>
+             <ion-input  formControlName="password" type="password"></ion-input>
+            </ion-item>        
 
-  
+    
+          
+       
+
+  <br>
       <ion-checkbox formControlName="terms" ></ion-checkbox><span routerLink="/terms">Agree to the terms and conditions</span>
       <br>
-      <ion-button color="primary" [disabled]="!check" type="submit">Sign IN</ion-button>
+      <br>
+      <ion-button style="color: white" class="btn" block shape="round" [disabled]="!check" type="submit">Sign IN</ion-button>
 
+       <br>
+      <ion-text  style="color:white" routerLink='/forgotpass'>Forgot Password</ion-text>
+      
       <br>
-      <br>
-      <ion-text  style="color:teal" routerLink='/forgotpass'>FORGOT PASSWORD?</ion-text>
-      <br>
-      <br>
-      <p>No account yet?</p>
-      <br>
-      <b style="color:teal" routerLink="/signup">SIGN UP</b>
+      <p>-OR-</p>
+      
+      <b style="color:white" routerLink="/signup">Create New Account</b>
     </form>
    
   </div>
+  
+
 
 </ion-content>

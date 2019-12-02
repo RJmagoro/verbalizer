@@ -5,14 +5,23 @@
   }
   ion-card-subtitle{
      font-size: 24px;
-     display: block;
+     display: block;  
     align-self: center;
+    
     text-align: center;
+    margin-inline-end: 17px;
   }
   .icon-list{
     display: block;
     align-self: center;
     text-align: center;
+    
     font-size:30px;
     margin-inline-end: 17px;
+}
+ion-menu-button{
+  color: white;
+}
+ion-img{
+  overflow: hidden;
 }

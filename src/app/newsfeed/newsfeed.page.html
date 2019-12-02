@@ -40,11 +40,11 @@
 
       <ion-card-content>
         <ion-card-subtitle>{{p.heading}}</ion-card-subtitle>
-        <img src={{p.image}}>
-       
+             
         {{p.topic}}
         
       </ion-card-content>
+      <img src={{p.image}}>  
 
       <div class="icon-view">
         <ion-icon  (click)="onLike(p, p.postId)" (dblclick)="dislike(p, p.postId)" name="thumbs-up"></ion-icon>

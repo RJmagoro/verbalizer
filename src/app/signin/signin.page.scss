@@ -1,45 +1,122 @@
+@media only screen and (max-width: 600px) {
+    body {
+    //   background-color: rgb(74, 192, 194) !important ;
+    }
+  }
+  
+ion-content{
+    // ion-img src="assets/images/icon.png"
+    
+
+    
+  
+
+    --ion-background-color:rgba(74, 192, 194) !important;
+    // opacity: 1;
+    // filter: alpha(opacity=60);
+    
+    
+    
+
+    // --background: rgba(74, 192, 194);
+    // --background: #0ba191 !important;
+    
+
+}
+
 .ion-padding{
+    
+    // background-color: darkcyan;
+    // --ion-background-color:rgb(74, 192, 194) !important;
+    // --background: rgba(74, 192, 194);
     top:20px;
     align-items: center;
     text-align: center;
     justify-items: center;
     justify-content: center;
+    
     ion-img{
         display: block;
         margin-left: auto;
         margin-right: auto;
+        
         width: 200px;
         height: 200px;
-        box-shadow: -5px -8px -12px;
+        box-shadow: -15px -8px -12px;
         justify-content: center;
+        opacity: 1;
         
         
-    }ion-item{
-        width: 300px;
-        display: block;
+    }
+    ion-card {
+        --ion-background-color: rgba(74, 192, 194) !important;
+        opacity: 1;
+    }
+    ion-input{
+        color: white;
+    }
+    ion-button{
+        color: white !important;
+    }
+    
+    ion-item{
+        --ion-background-color:#fff;
+    
+        border-radius: 29px;
+        width: 200px;
+       
+        // display: block;
         margin-left: auto;
-        margin-right: auto;
-        
+        margin-right: auto;                 
         justify-content: center;
         text-align: center;
+        font-size: 14px;
         align-items: center;
         .terms{
-            font-size: 30px;
+            font-size: 10px;
         }
     }
     ion-label{
-        font-size:18px;
-      
+        font-size: 12px;      
         margin-inline-end: 10px;
+        
+        
     }
     ion-text{
         text-align-last: right;
+        font-size: 10px;
+        
     }
     ion-checkbox{
-        padding-inline-end: 8px;
-        width: 25px;
+        padding-inline-end: 6px;
+        width: 20px;
+        height: 15px;
         bottom: -3px;
+        
     }
+    span{
+        font-size: 10px;
+        margin-top: 2%;
+         color: white;
+    }
+    p{
+         color: white;
+         font-size: 10px;
+    }
+    b{
+         color: white;
+        font-size: 10px;
+    }
+    .item .item-input {
+    background-color: rgb(236, 241, 241);
+}
+.btn{
+    // box-shadow: 0px 14px 25px;
+    // border-radius: 5px;
+}
+ion-menu-button{
+    color: white;
+  }
 
    
 }

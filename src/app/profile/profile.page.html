@@ -14,11 +14,18 @@
 
 
         <h3 class="h4 mb-4">Update your profile</h3>
-        <ion-text>{{myUser.name}}</ion-text>
+       
+        
        
         <div class="pic">
         <ion-img src={{myUser.profilepic}}></ion-img>
+        <div class="user">
+            <ion-text >{{myUser.name}}</ion-text>
+
+        </div>
+        
         <ion-fab  (click)="UpdateProfile()" vertical="bottom" horizontal="end" slot="fixed">
+            
             <ion-fab-button>
               <ion-icon name="camera"></ion-icon>
             </ion-fab-button>

@@ -175,6 +175,7 @@ export class UserchatPage implements OnInit {
     })
   }
   submitMsg() {
+    console.log('test')
     this.showSpinner = true;
     this.chatData = {
       message: this.messages.controls["message"].value,

@@ -9,7 +9,7 @@
 
 <ion-content>
   
-  <div class="Verify" *ngIf="first">
+  <!-- <div class="Verify" *ngIf="first">
      
     <ion-input type="text" placeholder="phone number" [(ngModel)]="phone"></ion-input>
       <ion-button ion-button block (click)="send()">send</ion-button><br>
@@ -17,7 +17,7 @@
     <ion-button ion-button block (click)="onverify()">Verify</ion-button>
 
   </div>
-  <div *ngIf="second">
+  <div *ngIf="second"> -->
 
   
   <div class="ion-padding">
@@ -61,12 +61,18 @@
 
   
     <ion-label>Charting with campaign Creators</ion-label><br>
-    <ion-textarea type="textarea" formControlName="message" placeholder="Type your message here" >{{ma.message}}</ion-textarea>
+    <ion-textarea style="width:55%"  type="textarea" formControlName="message" placeholder="Type your message here" >{{ma.message}} </ion-textarea><ion-button    (click)="submitMsg()" class="btn" >send</ion-button>
+    <ion-button class="sendBTN" *ngIf="receiver"   (click)="submitMsg()">send </ion-button>
     <br><br>
-    <ion-button   (click)="submitMsg()">send</ion-button>
+    
+      
+        
+
+
+    
   </form>
   </div>
-</div>
+
 
   
   
